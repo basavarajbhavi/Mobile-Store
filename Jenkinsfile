@@ -20,6 +20,7 @@ pipeline{
                     -Dsonar.projectKey=Mobilestore \
                     -Dsonar.host.url=http://172.174.142.7:9000 \
                     -Dsonar.login=sqp_b2528b6d7e51fffabd919f84ed3dc0a243c558b9
+                    '''
             }
         } 
     }
