@@ -23,5 +23,11 @@ pipeline{
                     '''
             }
         } 
+        stage ('buiding the docker image'){
+             steps{
+                echo 'Docker image Build'
+                sh 'docker build -t mobilestore .'
+        }
+        }
     }
 }
