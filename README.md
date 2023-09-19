@@ -1,4 +1,5 @@
 # Mobile-Store-
+
 Maven setup (ignore if already setup):
 
 a. Install maven from https://maven.apache.org/download.cgi
@@ -11,13 +12,19 @@ d. Set path for maven
 Build Spring Boot Project with Maven
 
     mvn package
+
 or
 
       mvn install / mvn clean install
+
 Run Spring Boot app using Maven:
 
      mvn spring-boot:run
+
 [optional] Run Spring Boot app with java -jar command
 
       java -jar target/mywebserviceapp-0.0.1-SNAPSHOT.jar
+
 implement CICD for thie application
+
+hello
