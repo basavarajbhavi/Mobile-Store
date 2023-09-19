@@ -15,7 +15,7 @@ pipeline{
         stage('Run the Mvn Applicatio'){
             steps{
                 echo 'Running the Mvn Application'
-                sh 'sudo mvn spring-boot:start'
+                sh 'mvn spring-boot:start'
             }
         }
     }
