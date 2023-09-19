@@ -12,5 +12,11 @@ pipeline{
                 sh 'mvn clean install -DskipTests'
             }
         } 
+        stage('Run the Mvn Applicatio'){
+            steps{
+                echo 'Running the Mvn Application'
+                sh 'mvn spring-boot:start'
+            }
+        }
     }
 }
