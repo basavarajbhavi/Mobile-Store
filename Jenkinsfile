@@ -2,7 +2,7 @@ pipeline{
     environment{
         registry = "skillassure/ibhmobilestore"
         registryCredential = "dockerhubauth"
-        //dockerImage = ''
+        dockerImage = ''
     }
     agent any
     stages{
