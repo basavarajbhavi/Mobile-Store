@@ -22,7 +22,7 @@ pipeline{
             steps{
                 echo "Deploying to dev environment"
                 sh 'docker rm -f mobile || true'
-                sh 'docker run -d --name=mobile -p 8081:8099 killassure/ibhmobilestore:latest'
+                sh 'docker run -d --name=mobile -p 8081:8099 skillassure/ibhmobilestore:latest'
             }
         }
 
