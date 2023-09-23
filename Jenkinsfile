@@ -2,7 +2,7 @@ pipeline{
     environment{
         registry = "skillassure/ibhmobilestore"
         registryCredential = "dockerhubauth"
-        dockerImage = ''
+        //dockerImage = ''
     }
     agent any
     stages{
@@ -28,8 +28,9 @@ pipeline{
                 echo "pushing the images to my docker hub registry"
                 script{
                       docker.withRegistry('',registryCredential) {
-                        dockerImage.push()
-                        dockerImage.push('$BUILD_NUMBER')
+                       sh 'docker tag skillassure/ibhmobilestore skillassure/ibhmobilestore:$BUILD_NUMBER' 
+                       sh 'docker push skillassure/ibhmobilestore:$BUILD_NUMBER'
+                       sh 'docker push skillassure/ibhmobilestore'
                       }
                 }
             }
