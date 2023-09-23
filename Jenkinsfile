@@ -1,4 +1,9 @@
 pipeline{
+    environment{
+        registry = "skillassure/ibhmobilestore"
+        registryCredential = "dockerhubauth"
+        dockerImage = ''
+    }
     agent any
     stages{
         stage ('checkout the code from SCM'){
@@ -17,6 +22,17 @@ pipeline{
             echo 'Docker image Build'
             sh 'docker build -t skillassure/ibhmobilestore .'
         }
+        }
+        stage('push image'){
+            steps{
+                echo "pushing the images to my docker hub registry"
+                script{
+                      docker.withRegistry('',registryCredential){
+                        dockerImage.push()
+                        dockerImage.push('$BUILD_NUMBER')
+                      }
+                }
+            }
         }
         stage('Deploy to dev'){
             steps{
