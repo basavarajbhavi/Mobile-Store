@@ -4,7 +4,7 @@ services:
     image: mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: sFox0Y8HPVpFe4nZDh4Z
       MYSQL_DATABASE: mobile
     ports:
       - "3306:3306"
